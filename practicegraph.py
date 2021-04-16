@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from altair import datum
 
-alt.data_transformers.enable('json')
+# alt.data_transformers.enable('json')
 
 x = np.arange(10000)
 y = x * 2
@@ -37,4 +37,4 @@ dx = dx/dh
 dy = dy/dh
 print(np.sqrt(dx**2 + dy **2))
 
-chart.save('practice.html')
+chart.save('practiceembed.html')
