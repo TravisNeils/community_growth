@@ -1,6 +1,6 @@
 # community_growth
 We can see communities grow!
 
-No network vis are upladed yet, waiting for aproval
+Just uploaded!
 
 [https://travisneils.github.io/community_growth/](https://travisneils.github.io/community_growth/)

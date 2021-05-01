@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"width": 400, "height": 300}, "mark": {"tooltip": null}}, "data": {"name": "data-d0523effd12ed90042cd145dda55f8f6"}, "mark": {"type": "text", "angle": 10}, "encoding": {"size": {"type": "quantitative", "field": "s"}, "text": {"value": "\u279f"}, "x": {"type": "quantitative", "field": "x"}, "angle": {"type": "quantitative", "field": "angle"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json", "datasets": {"data-d0523effd12ed90042cd145dda55f8f6": [{"x": 1, "y": 2, "s": 1.0, "angle": -208.46667563355186}, {"x": 2, "y": 4, "s": 1.4142135623730951, "angle": -210.75396235934107}, {"x": 3, "y": 6, "s": 1.7320508075688772, "angle": -306.4003450155451}, {"x": 4, "y": 8, "s": 2.0, "angle": -298.4774259823025}, {"x": 4, "y": 8, "s": 2.0, "angle": -125.20007077822567}, {"x": 3, "y": 6, "s": 1.7320508075688772, "angle": -200.92230532209174}, {"x": 2, "y": 4, "s": 1.4142135623730951, "angle": -42.1374564174763}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

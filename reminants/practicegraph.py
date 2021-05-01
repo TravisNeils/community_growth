@@ -1,16 +1,16 @@
-import altair as alt
+import altair.vegalite.v3 as alt
 import pandas as pd
 import numpy as np
 import pandas as pd
 from altair import datum
 
-# alt.data_transformers.enable('json')
-
-x = np.arange(10000)
+# x = np.arange(10000)
+x = np.array([1,2,3,4,4,3,2])
 y = x * 2
-s = np.sqrt(x)
+size = np.sqrt(x)
+angle = np.random.uniform(-360,0, len(x))
 # on = ['on'] * len(x)
-df = pd.DataFrame({'x':x, 'y': y, 's':s})
+df = pd.DataFrame({'x':x, 'y': y, 's':size, 'angle': angle})
 
 # options = ['on', 'off']
 #
@@ -18,11 +18,15 @@ df = pd.DataFrame({'x':x, 'y': y, 's':s})
 #
 # rating_select = alt.selection_single(fields=['on'], bind=rating_radio, name="on", init={'on':'on'})
 
-chart = alt.Chart(df).mark_trail(strokeCap='square').encode(
+chart = alt.Chart(df).mark_text(angle= 10).encode(
+    text=alt.value("➟"),
     x='x',
-    y = 'y',
-    size = alt.Size('s', scale=None)
-).interactive()
+    y='y',
+    size='s'
+
+)
+
+
 
 dx = 4
 dy = 2
@@ -37,4 +41,4 @@ dx = dx/dh
 dy = dy/dh
 print(np.sqrt(dx**2 + dy **2))
 
-chart.save('practiceembed.html')
+chart.save('practice.html')

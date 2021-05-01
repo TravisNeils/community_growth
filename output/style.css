@@ -1,0 +1,31 @@
+#vis { 
+	margin-bottom:40px;
+	width: min(70vw, 70vh);
+	height: min(70vw, 70vh);
+}
+
+form.vega-bindings { 
+	position: absolute; 
+	left: 30px; 
+	top: min(70vw, 70vh); 
+}
+
+.navigation {
+	font-size: 12pt; 
+	font-family: monospace; 
+	display:flex; 
+	justify-content: space-between; 
+	width: 800px;
+}
+	
+.instructions {
+	font-family: sans-serif;
+}
+				
+input[type="range"] { 
+	width: min(40vw, 40vh);
+}
+
+.instructions img {
+	height: 10px;
+}
