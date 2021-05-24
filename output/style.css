@@ -1,13 +1,13 @@
 #vis { 
 	margin-bottom:40px;
-	width: min(70vw, 70vh);
-	height: min(70vw, 70vh);
+	width: 100%;
+	height: 675px;
 }
 
 form.vega-bindings { 
 	position: absolute; 
 	left: 30px; 
-	top: min(70vw, 70vh); 
+	top: 800; 
 }
 
 .navigation {
